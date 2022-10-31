@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.hide{
+    display: none;
+}
+.car{
+    position: absolute;
+    height: 30px;
+    width: 60px;
+    bottom: 120px;
+    left: 130px;
+    background-color: brown;
+}
