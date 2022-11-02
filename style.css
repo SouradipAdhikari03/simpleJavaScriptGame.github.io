@@ -20,6 +20,7 @@ body{
     position: relative;
     border-left: 7px dashed rgb(255, 255, 255);
     border-right: 7px dashed rgb(255, 255, 255);
+    overflow:hidden;
 }
 .car, .enemy{
     position: absolute;
