@@ -5,7 +5,6 @@ let carsimg=['car2','car3','car4','car5','car6','car7']
 player={speed:5, score:0};
 const gameplay=()=>{
 
-    // console.log("clicked");
     let car=document.querySelector(".car");
     const road=gameArea.getBoundingClientRect();
     if (player.start) {
@@ -53,21 +52,20 @@ const start=()=>{
     
     let car=document.createElement('div')
     car.setAttribute('class','car')
-    // car.innerText=""
     gameArea.appendChild(car)
     player.x=car.offsetLeft;
     player.y=car.offsetTop;
     
 
     
-    for(x=0; x<4;x++){
+    for(x=0; x<8;x++){
         let enemyCar=document.createElement("div")
-        enemyCar.setAttribute("class","enemy")
-        enemyCar.y=((x+1)*350)*-1;
+        enemyCar.setAttribute('class','enemy')
+        enemyCar.y=((x+1)*300)*-1;
         enemyCar.style.top=enemyCar.y+"px"
-        ci="'"+carsimg[Math.floor(Math.random()*6)]+".png'";
-        enemyCar.style.backgroundImage=`url(${ci})`;       
-        enemyCar.style.left=Math.floor(Math.random()*350)+"px"
+        let c=carsimg[Math.floor(Math.random()*6)];
+        enemyCar.style.backgroundImage=`url(${c}.png)`;       
+        enemyCar.style.left=Math.floor(Math.random()*340)+"px"
         
         gameArea.appendChild(enemyCar)
     }
@@ -86,15 +84,11 @@ keys={
 keyDown=(e)=>{
     e.preventDefault();
     keys[e.key]=true;
-    // console.log(e.key);
-    // console.log(keys);
 }
 
 function keyUp(e){
     e.preventDefault();
     keys[e.key]=false;
-    // console.log(e.key);
-    // console.log(keys);
 }
 document.addEventListener("keydown",keyDown);
 document.addEventListener("keyup",keyUp);
@@ -122,7 +116,6 @@ isCollide=(a,b)=>{
 endGame=()=>{
     player.start=false;
     startScreen.classList.remove("hide")
-    // gameArea.classList.add("hide")
     startScreen.innerHTML="GAME OVER!! <br>your score is:"+player.score+ "<br> tap to restart!" ;
 }
 moveEnemy=(car)=>{
@@ -131,7 +124,6 @@ moveEnemy=(car)=>{
         if(isCollide(car,item)){
             console.log("boom");
             endGame();
-            // startScreen.appendChild(message)
         }
         if (item.y>=700) {
             item.y=-300
