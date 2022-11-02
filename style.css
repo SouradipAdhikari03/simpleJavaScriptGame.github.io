@@ -21,6 +21,7 @@ body{
     background-color: gray;
     margin: auto;
     position: relative;
+    overflow:hidden;
     /* background: url(/road.webp); */
     border-left: 7px dashed rgb(255, 255, 255);
     border-right: 7px dashed rgb(255, 255, 255);
