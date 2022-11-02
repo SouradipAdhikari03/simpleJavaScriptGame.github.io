@@ -14,7 +14,7 @@ const gameplay=()=>{
             player.y-=player.speed;
             
         }
-        if (keys.ArrowDown && player.y<road.bottom-75) {
+        if (keys.ArrowDown && player.y<road.height-75) {
             player.y+=player.speed;
             
         }
