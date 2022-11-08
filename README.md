@@ -1,1 +1,1 @@
-# simpleJavaScriptGame.github.io
+## This is a cool javaScript Racing game
